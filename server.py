@@ -6,6 +6,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 # Server configuration
 SERVER_HOST = "0.0.0.0"
 SERVER_PORT = int(os.getenv("PORT", 10000))  # Render's specified port or default to 10000
+HTTP_PORT = 8000  # Use a different port for the HTTP server
 BUFFER_SIZE = 1024 * 128
 
 # Create a socket object
@@ -27,9 +28,8 @@ def run_http_server():
             self.end_headers()
             self.wfile.write(bytes("OK", "utf8"))
     
-    http_port = SERVER_PORT  # Use the same port for HTTP server
-    server = HTTPServer(('0.0.0.0', http_port), HealthCheckHandler)
-    print(f"Starting HTTP server on port {http_port}")
+    server = HTTPServer(('0.0.0.0', HTTP_PORT), HealthCheckHandler)
+    print(f"Starting HTTP server on port {HTTP_PORT}")
     server.serve_forever()
 
 # Run the HTTP server in a separate thread
