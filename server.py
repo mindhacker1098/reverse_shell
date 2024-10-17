@@ -11,7 +11,7 @@ s = socket.socket()
 s.bind(('', SERVER_PORT))
 s.listen(2)  # Listen for two connections (Admin and Worker)
 
-print(f"Listening on {SERVER_HOST}:{SERVER_PORT} ...")
+print(f"Listening on :{SERVER_PORT} ...")
 
 # Accept connection from the Worker
 worker_socket, worker_address = s.accept()
