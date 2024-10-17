@@ -1,6 +1,7 @@
 import socket
 
 # Server configuration
+SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 5003
 BUFFER_SIZE = 1024 * 128
 
@@ -8,10 +9,10 @@ BUFFER_SIZE = 1024 * 128
 s = socket.socket()
 
 # Bind the socket to the host and port
-s.bind(('', SERVER_PORT))
+s.bind((SERVER_HOST, SERVER_PORT))
 s.listen(2)  # Listen for two connections (Admin and Worker)
 
-print(f"Listening on :{SERVER_PORT} ...")
+print(f"Listening on {SERVER_HOST}:{SERVER_PORT} ...")
 
 # Accept connection from the Worker
 worker_socket, worker_address = s.accept()
