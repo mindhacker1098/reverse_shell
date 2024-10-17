@@ -1,6 +1,5 @@
 import socket
 import os
-import time
 
 # Server configuration
 SERVER_HOST = "0.0.0.0"
@@ -17,10 +16,6 @@ s.listen(2)  # Listen for two connections (Admin and Worker)
 print(f"Listening on {SERVER_HOST}:{SERVER_PORT} ...")
 
 try:
-    # Add some delay to ensure the environment is ready
-    print("Waiting for connections...")
-    time.sleep(5)
-
     # Accept connection from the Worker
     print("Waiting for Worker connection...")
     worker_socket, worker_address = s.accept()
